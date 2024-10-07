@@ -37,7 +37,7 @@ public class ApiService {
         Response.Listener<String> responseListener) {
         String requestUrl =
                 hourlyWeatherUrl + "?lat=" + latitude + "&lon=" + longitude + "&cnt=" + NUMBER_OF_HOURS
-                        + "&appid=" + apiKey;
+                        + "&appid=" + apiKey + "&lang=vi";
         StringRequest stringRequest = new StringRequest(Request.Method.GET, requestUrl,
             responseListener,
             error -> Toast.makeText(context, error.toString(), Toast.LENGTH_SHORT).show());
@@ -48,8 +48,8 @@ public class ApiService {
     public void getDailyWeather(double latitude, double longitude,
         Response.Listener<String> dailyListener) {
         String requestUrl =
-            dailyWeatherUrl + "?lat=" + latitude + "&lon=" + longitude + "&cnt=" + NUMBER_OF_DAYS
-                + "&appid=" + apiKey;
+            dailyWeatherUrl + "?lat=" + latitude + "&lon=" + longitude + "&cnt="  + NUMBER_OF_DAYS
+                +  "&lang=vi" + "&appid=" + apiKey;
         StringRequest stringRequest = new StringRequest(Request.Method.GET, requestUrl,
             dailyListener,
             error -> Toast.makeText(context, error.toString(), Toast.LENGTH_SHORT).show());
